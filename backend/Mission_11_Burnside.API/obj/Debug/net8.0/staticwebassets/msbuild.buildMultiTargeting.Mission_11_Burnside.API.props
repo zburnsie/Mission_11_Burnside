@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/Mission_11_Burnside.API.props" />
+</Project>
