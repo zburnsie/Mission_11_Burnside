@@ -19,9 +19,21 @@ public class BookController
     }
     
     [HttpGet("AllBooks")]
-    public IActionResult GetBooks(int pageSize = 10, int pageNum = 1, string sortBy = "title")
+    public IActionResult GetBooks(int pageSize = 10, int pageNum = 1, string sortBy = "title",
+        [FromQuery(Name = "category")]List<string>? categories = null)
     {
+        Console.WriteLine("Recieved categories: " + (categories != null ? string.Join(", ", categories) : "None"));
         var query = _bookContext.Books.AsQueryable();
+        
+        if (categories != null && categories.Any())
+        {
+            var categoryList = categories.Select(c => c.ToLower()).ToList();
+            query = query.Where(b => categoryList.Contains(b.Category.ToLower()));
+        }
+        else
+        {
+            Console.WriteLine("No categories provided. Fetching all books.");
+        }
         
         switch (sortBy.ToLower()) 
         {
@@ -42,15 +54,27 @@ public class BookController
             .Take(pageSize)
             .ToList();
         
-        var totalNumBooks = _bookContext.Books.Count();
+        var totalNumBooks = query.Count();
 
         return new JsonResult(new
         {
             Books = paginatedBooks,
             TotalNumBooks = totalNumBooks
         });
-
     }
+    
+    // Another API request to get the book categories that we will show
+    [HttpGet("GetCategories")]
+    public IActionResult GetCategories()
+    {
+        var categories = _bookContext.Books
+            .Select(b => b.Category)
+            .Distinct()
+            .ToList();
+    
+        return new JsonResult(categories);  // Return categories as the response
+    }
+
 }
 
     

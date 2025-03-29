@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Book } from './types/Book';
 
-function BookList() {
+function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   const [books, setBooks] = useState<Book[]>([]);
   const [pageSize, setPageSize] = useState<number>(10);
   const [pageNum, setPageNum] = useState<number>(1);
@@ -10,24 +10,31 @@ function BookList() {
   const [sortBy, setSortBy] = useState<string>('title');
 
   useEffect(() => {
+    console.log('Selected categories:', selectedCategories);
+  }, [selectedCategories]);
+
+  useEffect(() => {
     const fetchBooks = async () => {
-      const response = await fetch(
-        `https://localhost:5000/Book/AllBooks?pageSize=${pageSize}&pageNum=${pageNum}&sortBy=${sortBy}`
-      );
+      const categoryParams = selectedCategories
+        .map((cat) => `category=${encodeURIComponent(cat)}`)
+        .join('&');
+
+      const url = `https://localhost:5000/Book/AllBooks?pageSize=${pageSize}&pageNum=${pageNum}&sortBy=${sortBy}${selectedCategories.length ? `&${categoryParams}` : ''}`;
+      console.log('Final API URL:', url);
+      const response = await fetch(url);
+
       const data = await response.json();
+      console.log('API Response:', data);
       setBooks(data.books);
       setTotalItems(data.totalNumBooks);
       setTotalPages(Math.ceil(data.totalNumBooks / pageSize)); // Fixed incorrect total pages calculation
     };
 
     fetchBooks();
-  }, [pageSize, pageNum, sortBy]);
+  }, [pageSize, pageNum, sortBy, selectedCategories]);
 
   return (
     <>
-      <h1> Book List </h1>
-      <br />
-
       <label>
         Sort by:
         <select
@@ -60,7 +67,10 @@ function BookList() {
                 <strong>ISBN: </strong> {b.isbn}
               </li>
               <li>
-                <strong>Classification/Category: </strong> {b.classification}
+                <strong>Classification: </strong> {b.classification}
+              </li>
+              <li>
+                <strong>Category: </strong> {b.category}
               </li>
               <li>
                 <strong>Number of Pages: </strong> {b.pageCount}
