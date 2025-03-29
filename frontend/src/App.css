@@ -40,3 +40,33 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Footer styles */
+footer {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}
+
+/* Back to Top button styles */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: #0056b3;
+}
