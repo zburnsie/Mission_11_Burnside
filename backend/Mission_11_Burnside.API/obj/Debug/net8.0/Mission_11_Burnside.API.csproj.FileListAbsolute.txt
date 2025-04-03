@@ -1,6 +1,5 @@
 /Users/tech/Desktop/Mission_11_Burnside/backend/Mission_11_Burnside.API/bin/Debug/net8.0/appsettings.Development.json
 /Users/tech/Desktop/Mission_11_Burnside/backend/Mission_11_Burnside.API/bin/Debug/net8.0/appsettings.json
-/Users/tech/Desktop/Mission_11_Burnside/backend/Mission_11_Burnside.API/bin/Debug/net8.0/Mission_11_Burnside.API.staticwebassets.endpoints.json
 /Users/tech/Desktop/Mission_11_Burnside/backend/Mission_11_Burnside.API/bin/Debug/net8.0/Mission_11_Burnside.API
 /Users/tech/Desktop/Mission_11_Burnside/backend/Mission_11_Burnside.API/bin/Debug/net8.0/Mission_11_Burnside.API.deps.json
 /Users/tech/Desktop/Mission_11_Burnside/backend/Mission_11_Burnside.API/bin/Debug/net8.0/Mission_11_Burnside.API.runtimeconfig.json
@@ -55,9 +54,7 @@
 /Users/tech/Desktop/Mission_11_Burnside/backend/Mission_11_Burnside.API/obj/Debug/net8.0/scopedcss/bundle/Mission_11_Burnside.API.styles.css
 /Users/tech/Desktop/Mission_11_Burnside/backend/Mission_11_Burnside.API/obj/Debug/net8.0/staticwebassets.build.json
 /Users/tech/Desktop/Mission_11_Burnside/backend/Mission_11_Burnside.API/obj/Debug/net8.0/staticwebassets.development.json
-/Users/tech/Desktop/Mission_11_Burnside/backend/Mission_11_Burnside.API/obj/Debug/net8.0/staticwebassets.build.endpoints.json
 /Users/tech/Desktop/Mission_11_Burnside/backend/Mission_11_Burnside.API/obj/Debug/net8.0/staticwebassets/msbuild.Mission_11_Burnside.API.Microsoft.AspNetCore.StaticWebAssets.props
-/Users/tech/Desktop/Mission_11_Burnside/backend/Mission_11_Burnside.API/obj/Debug/net8.0/staticwebassets/msbuild.Mission_11_Burnside.API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 /Users/tech/Desktop/Mission_11_Burnside/backend/Mission_11_Burnside.API/obj/Debug/net8.0/staticwebassets/msbuild.build.Mission_11_Burnside.API.props
 /Users/tech/Desktop/Mission_11_Burnside/backend/Mission_11_Burnside.API/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.Mission_11_Burnside.API.props
 /Users/tech/Desktop/Mission_11_Burnside/backend/Mission_11_Burnside.API/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.Mission_11_Burnside.API.props

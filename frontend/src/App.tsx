@@ -22,12 +22,6 @@ function App() {
               <WelcomeBand />
             </div>
 
-            <div className="row">
-              <div className="col-12 text-end">
-                <CartSummary />
-              </div>
-            </div>
-
             <Routes>
               {' '}
               {/* Define routes here */}
@@ -35,6 +29,7 @@ function App() {
                 path="/"
                 element={
                   <div className="row">
+                    {/* Sidebar */}
                     <div className="col-md-3">
                       <CategoryFilter
                         selectedCategories={selectedCategories}
@@ -42,8 +37,19 @@ function App() {
                       />
                     </div>
 
-                    <div className="col-md-9">
+                    {/* Book list */}
+                    <div className="col-md-6">
                       <BookList selectedCategories={selectedCategories} />
+                    </div>
+
+                    {/* Cart Summary as a Card */}
+                    <div className="col-md-3">
+                      <div className="card shadow-sm border-secondary">
+                        <div className="card-body">
+                          <h5 className="card-title">Cart Summary</h5>
+                          <CartSummary />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 }
@@ -53,8 +59,8 @@ function App() {
           </div>
         </CartProvider>
       </Router>
-      <Footer/>
-      <BackToTopButton/>
+      <Footer />
+      <BackToTopButton />
     </>
   );
 }

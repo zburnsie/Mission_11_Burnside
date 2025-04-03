@@ -1,12 +1,11 @@
 {
   "Version": 1,
-  "Hash": "+qme12pX9SR+azvafFk4IQ2+dZwr93/pJWNlSzXBESE=",
+  "Hash": "bhYEUtyY4seCKSwJDB3IZhDbVZ8c2O7zodaRqITCNJQ=",
   "Source": "Mission_11_Burnside.API",
   "BasePath": "_content/Mission_11_Burnside.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }
