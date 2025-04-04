@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mission_11_Burnside.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+427978089c17194ba22415f27c86b83e06ea4d90")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d1495c6392940d0290abc4389d4c26b3fcb34d95")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mission_11_Burnside.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mission_11_Burnside.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -26,7 +26,7 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
         .map((cat) => `category=${encodeURIComponent(cat)}`)
         .join('&');
 
-      const url = `${API_BASE}AllBooks?pageSize=${pageSize}&pageNum=${pageNum}&sortBy=${sortBy}${selectedCategories.length ? `&${categoryParams}` : ''}`;
+      const url = `${API_BASE}/AllBooks?pageSize=${pageSize}&pageNum=${pageNum}&sortBy=${sortBy}${selectedCategories.length ? `&${categoryParams}` : ''}`;
       console.log('Final API URL:', url);
       const response = await fetch(url);
 
