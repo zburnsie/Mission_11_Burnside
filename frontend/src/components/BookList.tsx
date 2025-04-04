@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Book } from '../types/Book';
 import { useCart } from '../context/CartContext';
-import { CartItem } from '../types/CartItem';
 import { useNavigate } from 'react-router-dom';
 
 function BookList({ selectedCategories }: { selectedCategories: string[] }) {

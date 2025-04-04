@@ -1,5 +1,5 @@
 // src/components/BackToTopButton.tsx
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const BackToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
