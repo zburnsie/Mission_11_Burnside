@@ -3,6 +3,9 @@ import { Book } from '../types/Book';
 import { useCart } from '../context/CartContext';
 import { useNavigate } from 'react-router-dom';
 
+const API_BASE =
+  'https://mission-13-burnside-backend-bkh9fvg5exfhg7bs.eastus-01.azurewebsites.net/Book';
+
 function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   const [books, setBooks] = useState<Book[]>([]);
   const [pageSize, setPageSize] = useState<number>(10);
@@ -23,7 +26,7 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
         .map((cat) => `category=${encodeURIComponent(cat)}`)
         .join('&');
 
-      const url = `https://localhost:5000/Book/AllBooks?pageSize=${pageSize}&pageNum=${pageNum}&sortBy=${sortBy}${selectedCategories.length ? `&${categoryParams}` : ''}`;
+      const url = `${API_BASE}AllBooks?pageSize=${pageSize}&pageNum=${pageNum}&sortBy=${sortBy}${selectedCategories.length ? `&${categoryParams}` : ''}`;
       console.log('Final API URL:', url);
       const response = await fetch(url);
 
