@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
 function CategoryFilter({
-  selectedCategories, setSelectedCategories,
+  selectedCategories,
+  setSelectedCategories,
 }: {
   selectedCategories: string[];
   setSelectedCategories: (categories: string[]) => void;
@@ -12,14 +13,13 @@ function CategoryFilter({
     const fetchCategories = async () => {
       try {
         const response = await fetch(
-          'https://localhost:5000/Book/GetCategories' // Replace with correct API endpoint
+          'https://mission-13-burnside-backend-bkh9fvg5exfhg7bs.eastus-01.azurewebsites.net/Book/GetCategories' // Replace with correct API endpoint
         );
         const data = await response.json();
         console.log('Fetched categories:', data); // Debugging line
         setCategories(data);
       } catch (error) {
         console.error('Error fetching categories', error);
-        
       }
     };
 
