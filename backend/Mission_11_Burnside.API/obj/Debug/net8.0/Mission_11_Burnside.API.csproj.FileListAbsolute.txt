@@ -66,3 +66,4 @@
 /Users/tech/Desktop/Mission_11_Burnside/backend/Mission_11_Burnside.API/obj/Debug/net8.0/Mission_11_Burnside.API.genruntimeconfig.cache
 /Users/tech/Desktop/Mission_11_Burnside/backend/Mission_11_Burnside.API/obj/Debug/net8.0/ref/Mission_11_Burnside.API.dll
 /Users/tech/Desktop/Mission_11_Burnside/backend/Mission_11_Burnside.API/obj/Debug/net8.0/Mission_11_Burnside.API.sourcelink.json
+/Users/tech/Desktop/Mission_11_Burnside/backend/Mission_11_Burnside.API/bin/Debug/net8.0/Bookstore.sqlite

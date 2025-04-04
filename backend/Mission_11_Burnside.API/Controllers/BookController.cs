@@ -8,7 +8,7 @@ namespace Mission_11_Burnside.API.Controllers;
 
 [Route("[controller]")]
 [ApiController]
-public class BookController
+public class BookController : ControllerBase
 {
     private readonly BookDbContext _bookContext;
 
@@ -74,7 +74,59 @@ public class BookController
     
         return new JsonResult(categories);  // Return categories as the response
     }
+    
+    [HttpPut("UpdateBook/{id}")]
+    public IActionResult UpdateBook(int id, [FromBody] Book updatedBook)
+    {
+        var existingBook = _bookContext.Books.FirstOrDefault(b => b.BookId == id);
 
+        if (existingBook == null)
+        {
+            return NotFound();
+        }
+
+        // Update properties
+        existingBook.Title = updatedBook.Title;
+        existingBook.Author = updatedBook.Author;
+        existingBook.Publisher = updatedBook.Publisher;
+        existingBook.Category = updatedBook.Category;
+        existingBook.Price = updatedBook.Price;
+        existingBook.ISBN = updatedBook.ISBN;
+        existingBook.Classification = updatedBook.Classification;
+        existingBook.PageCount = updatedBook.PageCount;
+
+        _bookContext.SaveChanges();
+
+        return Ok(existingBook);
+    }
+    
+    [HttpPost("AddBook")]
+    public IActionResult AddBook([FromBody] Book newBook)
+    {
+        _bookContext.Books.Add(newBook);
+        _bookContext.SaveChanges();
+
+        return CreatedAtAction(nameof(GetBooks), new { id = newBook.BookId }, newBook);
+    }
+    
+    [HttpDelete("DeleteBook/{id}")]
+    public IActionResult DeleteBook(int id)
+    {
+        var book = _bookContext.Books.FirstOrDefault(b => b.BookId == id);
+
+        if (book == null)
+        {
+            return NotFound();
+        }
+
+        _bookContext.Books.Remove(book);
+        _bookContext.SaveChanges();
+
+        return NoContent();
+    }
+
+
+    
 }
 
     

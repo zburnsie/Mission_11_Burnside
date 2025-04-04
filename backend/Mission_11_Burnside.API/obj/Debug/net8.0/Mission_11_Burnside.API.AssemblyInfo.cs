@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mission_11_Burnside.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85e4b6996ae61f0231f0ea242f44b1ad4fdef31e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+427978089c17194ba22415f27c86b83e06ea4d90")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mission_11_Burnside.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mission_11_Burnside.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
